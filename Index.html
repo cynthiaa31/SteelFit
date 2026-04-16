@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEELFIT — Performance & Style</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="Styles.css">
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="nav-inner">
+        
+        <div class="nav-center">
+          <a href="index.html" class="logo-box">
+            <img src="img/logo.png" alt="SteelFit" class="main-logo-img">
+          </a>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="#" class="filter-btn" data-filter="all">Accueil</a></li>
+          <li><a href="#" class="filter-btn" data-filter="vetements">Vêtements</a></li>
+          <li><a href="#" class="filter-btn" data-filter="equipements">Équipements</a></li>
+          <li><a href="#" class="filter-btn" data-filter="nutrition">Nutrition</a></li>
+        </ul>
+
+        <div class="nav-icons">
+          <a href="#">Recherche</a>
+          <a href="login.html">Compte</a>
+          <a href="panier.html" class="cart-btn">Panier (0)</a>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Nouvelle collection 2026</p>
+        <h1 class="hero-title">
+          Forge
+          <span>ton corps.</span>
+        </h1>
+        <p class="hero-desc">
+          Vêtements techniques, équipements de performance
+          et nutrition sportive pour atteindre tes objectifs.
+        </p>
+        <div class="hero-btns">
+          <a href="catalogue.html" class="btn btn-red">Découvrir</a>
+          <a href="catalogue.html" class="btn btn-ghost">Voir les promos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--bg2)">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Best <span>Sellers</span></h2>
+        <a href="catalogue.html" class="section-link">Voir tout →</a>
+      </div>
+      <div class="products-grid" id="product-container">
+
+        <a href="produit.html" class="product-card" data-category="vetements">
+          <div class="product-img">
+            <img src="img/tshirt-performance.png" alt="T-shirt Performance SF-01">
+            <span class="badge badge-red">Nouveau</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">T-shirt Performance SF-01</div>
+            <div class="product-rating"><span>★★★★★</span> (142)</div>
+            <div class="product-price">34.99 €</div>
+          </div>
+        </a>
+
+        <a href="produit.html" class="product-card" data-category="vetements">
+          <div class="product-img">
+            <img src="img/legging-compression.png" alt="Legging Compression Pro">
+            <span class="badge badge-red">-15%</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Legging Compression Pro</div>
+            <div class="product-rating"><span>★★★★☆</span> (87)</div>
+            <div class="product-price">42.49 € <span class="product-price-old">49.99 €</span></div>
+          </div>
+        </a>
+
+        <a href="produit.html" class="product-card" data-category="nutrition">
+          <div class="product-img">
+            <img src="img/whey-protein.png" alt="Whey Protein 2kg Vanille">
+            <span class="badge badge-dark">Populaire</span>
+          </div>
+          <div class="product-body">
+            <div class="product-name">Whey Protein 2kg Vanille</div>
+            <div class="product-rating"><span>★★★★★</span> (312)</div>
+            <div class="product-price">54.99 €</div>
+          </div>
+        </a>
+
+        <a href="produit.html" class="product-card" data-category="vetements">
+          <div class="product-img">
+            <img src="img/veste-training.png" alt="Veste Training Elite">
+          </div>
+          <div class="product-body">
+            <div class="product-name">Veste Training Elite</div>
+            <div class="product-rating"><span>★★★★☆</span> (56)</div>
+            <div class="product-price">79.99 €</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Steel<span>Fit</span></div>
+          <p class="footer-desc">Plateforme e-commerce dédiée au fitness. Vêtements, équipements et nutrition pour les passionnés de performance.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Boutique</div>
+          <ul class="footer-links">
+            <li><a href="catalogue.html">Vêtements</a></li>
+            <li><a href="catalogue.html">Équipements</a></li>
+            <li><a href="catalogue.html">Nutrition</a></li>
+            <li><a href="catalogue.html">Nouveautés</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Aide</div>
+          <ul class="footer-links">
+            <li><a href="#">Mon compte</a></li>
+            <li><a href="#">Livraison</a></li>
+            <li><a href="#">Retours</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Légal</div>
+          <ul class="footer-links">
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#">CGV</a></li>
+            <li><a href="#">Confidentialité</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 STEELFIT — Tous droits réservés</span>
+        <span>VISA — MASTERCARD — PAYPAL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const products = document.querySelectorAll('.product-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          const filter = button.getAttribute('data-filter');
+
+          products.forEach(product => {
+            const category = product.getAttribute('data-category');
+            
+            if (filter === 'all' || category === filter) {
+              product.style.display = 'block';
+              // Petit délai pour la transition d'opacité
+              setTimeout(() => product.style.opacity = '1', 10);
+            } else {
+              product.style.opacity = '0';
+              // Masquer complètement après la fin de la transition
+              setTimeout(() => product.style.display = 'none', 300);
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
