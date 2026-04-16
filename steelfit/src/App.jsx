@@ -11,13 +11,37 @@ function App() {
   const [user, setUser] = useState(null);
   const [cart, setCart] = useState([]);
 
+  // --- PERSISTANCE DE LA SESSION ---
+  // Vérifie si un utilisateur est déjà stocké dans le navigateur au démarrage
+  useEffect(() => {
+    const savedUser = localStorage.getItem('steelfit_user');
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []);
+
   // --- CHARGEMENT DES PRODUITS ---
   useEffect(() => {
-    fetch('http://localhost:5000/produits')
-      .then(res => res.json())
+    fetch('http://localhost:5000/produits') 
+      .then(res => {
+        if (!res.ok) throw new Error("Erreur réseau");
+        return res.json();
+      })
       .then(data => setProducts(data))
-      .catch(err => console.error("Erreur serveur :", err));
+      .catch(err => console.error("Erreur React :", err));
   }, []);
+
+  // --- LOGIQUE DE CONNEXION / DÉCONNEXION ---
+  const handleLoginSuccess = (userData) => {
+    setUser(userData);
+    localStorage.setItem('steelfit_user', JSON.stringify(userData));
+    setShowLogin(false);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem('steelfit_user');
+  };
 
   // --- LOGIQUE DU PANIER ---
   const addToCart = (product) => {
@@ -61,14 +85,11 @@ function App() {
       {showLogin && (
         <Login 
           onClose={() => setShowLogin(false)} 
-          onLoginSuccess={(userData) => {
-            setUser(userData);
-            setShowLogin(false);
-          }} 
+          onLoginSuccess={handleLoginSuccess} 
         />
       )}
 
-      {/*SIDEBAR DU PANIER */}
+      {/* SIDEBAR DU PANIER */}
       {showCart && (
         <div className="cart-overlay">
           <div className="cart-sidebar">
@@ -110,7 +131,7 @@ function App() {
         </div>
       )}
 
-      {/*NAVIGATION */}
+      {/* NAVIGATION */}
       <nav>
         <div className="container">
           <div className="nav-inner">
@@ -125,9 +146,16 @@ function App() {
               <li><a href="#" onClick={() => setFilter('nutrition')}>Nutrition</a></li>
             </ul>
             <div className="nav-icons">
-              <a href="#" onClick={(e) => { e.preventDefault(); !user && setShowLogin(true); }}>
-                {user ? `Salut, ${user.nom.split(' ')[0]}` : "Compte"}
-              </a>
+              {user ? (
+                <div className="user-nav">
+                  <span>Salut, {user.nom?.split(' ')[0]}</span>
+                  <button onClick={handleLogout} className="logout-btn">Déconnexion</button>
+                </div>
+              ) : (
+                <a href="#" onClick={(e) => { e.preventDefault(); setShowLogin(true); }}>
+                  Compte
+                </a>
+              )}
               <a href="#" className="cart-btn" onClick={(e) => { e.preventDefault(); setShowCart(true); }}>
                 Panier ({nbArticles})
               </a>
@@ -136,7 +164,7 @@ function App() {
         </div>
       </nav>
 
-      {/*HERO SECTION */}
+      {/* HERO SECTION */}
       <header className="hero">
         <div className="container">
           <div className="hero-content">
@@ -147,7 +175,7 @@ function App() {
         </div>
       </header>
 
-      {/*GRILLE DE PRODUITS */}
+      {/* GRILLE DE PRODUITS */}
       <main className="container section">
         <h2 className="section-title">Nos <span>Produits</span></h2>
         <div className="products-grid">
@@ -155,7 +183,10 @@ function App() {
             <div key={product.id} className="product-card">
               <div className="product-img">
                 <img src={product.image_url} alt={product.nom} />
-                {product.badge && <span className="badge badge-red">{product.badge}</span>}
+                {/* OVERLAY DESCRIPTION AU SURVOL */}
+                <div className="product-overlay">
+                  <p>{product.description || "Performance et qualité SteelFit."}</p>
+                </div>
               </div>
               <div className="product-body">
                 <h3>{product.nom}</h3>
@@ -169,7 +200,7 @@ function App() {
         </div>
       </main>
 
-      {/*FOOTER */}
+      {/* FOOTER */}
       <footer>
         <div className="container footer-bottom">
           <p>© 2026 STEELFIT — Tous droits réservés</p>

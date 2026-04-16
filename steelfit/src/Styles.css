@@ -298,3 +298,79 @@ footer { background: #050505; padding: 60px 0; border-top: 1px solid var(--borde
 }
 
 .checkout-btn { width: 100%; padding: 15px; }
+
+/* Conteneur de l'utilisateur dans la nav */
+.user-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 1px solid rgba(224, 30, 55, 0.2);
+}
+
+.user-nav span {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* Le bouton Déconnexion */
+.logout-btn {
+  background: transparent;
+  color: #e01e37; /* Ton rouge SteelFit */
+  border: 1px solid #e01e37;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #e01e37;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(224, 30, 55, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Conteneur de l'image pour positionner l'overlay */
+.product-img {
+  position: relative;
+  overflow: hidden;
+}
+
+/* L'overlay (caché par défaut) */
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Fond noir semi-transparent */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0; /* Invisible */
+  transition: opacity 0.3s ease; /* Animation douce */
+}
+
+/* Affichage au survol */
+.product-card:hover .product-overlay {
+  opacity: 1; /* Devient visible */
+}
+
+.product-overlay p {
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-overlay p {
+  transform: translateY(0); /* Petit effet de mouvement du texte */
+}

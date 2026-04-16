@@ -25,7 +25,7 @@ function Login({ onLoginSuccess, onClose }) {
     console.log("Tentative d'envoi vers le serveur :", payload);
 
     try {
-      const response = await fetch(`http://localhost:5173${endpoint}`, {
+      const response = await fetch(`http://localhost:5000${endpoint}`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json' 
@@ -97,6 +97,8 @@ function Login({ onLoginSuccess, onClose }) {
       </div>
     </div>
   );
+
+  
 }
 
 export default Login;
