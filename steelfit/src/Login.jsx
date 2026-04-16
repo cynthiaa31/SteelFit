@@ -15,7 +15,7 @@ function Login({ onLoginSuccess, onClose }) {
     // Définition de l'URL selon le mode (Inscription ou Connexion)
     const endpoint = isRegister ? '/register' : '/login';
     
-    // On prépare l'objet exactement comme ton serveur l'attend
+    // Prépare l'objet 
     const payload = {
       nom: formData.nom,
       email: formData.email,

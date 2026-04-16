@@ -3,8 +3,8 @@
   --bg2:     #141414;
   --bg3:     #1c1c1c;
   --border:  #2a2a2a;
-  --accent:  #56108f; /* Ton violet profond */
-  --neon:    #9410c8; /* Violet plus flashy pour les effets */
+  --accent:  #56108f; 
+  --neon:    #9410c8; 
   --txt:     #f0f0f0;
   --txt2:    #9a9a9a;
   --txt3:    #5a5a5a;
@@ -28,7 +28,7 @@ nav {
 
 .nav-inner {
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* GAUCHE | LOGO | DROITE */
+  grid-template-columns: 1fr auto 1fr; 
   align-items: center;
   height: 100px; 
 }
@@ -159,7 +159,7 @@ nav {
   justify-content: center;
 }
 
-/* AJOUTE CE BLOC : C'est lui qui force l'image à remplir le carré gris */
+
 .product-img img {
   width: 100%;
   height: 100%;
@@ -179,7 +179,7 @@ footer { background: #050505; padding: 60px 0; border-top: 1px solid var(--borde
 
 .product-card {
   transition: opacity 0.3s ease, transform 0.3s ease, border-color 0.2s;
-  /* Garde le reste de ton code .product-card ici */
+  
 }
 
 .nav-filter-btn {
@@ -192,9 +192,9 @@ footer { background: #050505; padding: 60px 0; border-top: 1px solid var(--borde
 }
 .nav-filter-btn:hover { color: var(--red); }
 
-/* 1. La boîte qui contient l'image */
+
 .product-img {
-  background-color: #2a2a2a; /* Ton fond gris actuel */
+  background-color: #2a2a2a; /* Fond gris actuel */
   width: 100%;
   aspect-ratio: 1 / 1;    /* Force un carré parfait */
   overflow: hidden;       /* Coupe ce qui dépasse */
@@ -204,7 +204,7 @@ footer { background: #050505; padding: 60px 0; border-top: 1px solid var(--borde
   position: relative;
 }
 
-/* 2. L'IMAGE ELLE-MÊME (C'est ce qui manque sûrement) */
+
 .product-img img {
   width: 100% !important;  /* Force la largeur */
   height: 100% !important; /* Force la hauteur */

@@ -8,9 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Indispensable pour lire le body de React
 
-// 1. Connexion à PostgreSQL
-
-
+// Connexion à PostgreSQL
 const pool = new Pool({
   user: process.env.DB_USER,
   host: process.env.DB_HOST,
@@ -19,12 +17,12 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-// 2. Route d'accueil
+// Route d'accueil
 app.get('/', (req, res) => {
   res.send('Le serveur SteelFit est en ligne !');
 });
 
-// 3. Récupérer les produits
+// Récupérer les produits
 app.get('/produits', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM produits');
@@ -34,8 +32,6 @@ app.get('/produits', async (req, res) => {
     res.status(500).json({ error: "Erreur base de données" });
   }
 });
-
-// --- PARTIE AUTHENTIFICATION CORRIGÉE ---
 
 // Inscription
 app.post('/register', async (req, res) => {
@@ -81,7 +77,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// 4. Lancement du serveur
+// Lancement du serveur
 const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`-------------------------------------------`);

@@ -57,7 +57,7 @@ function App() {
   return (
     <div className="App">
       
-      {/* 1. MODAL DE CONNEXION */}
+      {/* MODAL DE CONNEXION */}
       {showLogin && (
         <Login 
           onClose={() => setShowLogin(false)} 
@@ -68,7 +68,7 @@ function App() {
         />
       )}
 
-      {/* 2. SIDEBAR DU PANIER */}
+      {/*SIDEBAR DU PANIER */}
       {showCart && (
         <div className="cart-overlay">
           <div className="cart-sidebar">
@@ -110,7 +110,7 @@ function App() {
         </div>
       )}
 
-      {/* 3. NAVIGATION */}
+      {/*NAVIGATION */}
       <nav>
         <div className="container">
           <div className="nav-inner">
@@ -136,7 +136,7 @@ function App() {
         </div>
       </nav>
 
-      {/* 4. HERO SECTION */}
+      {/*HERO SECTION */}
       <header className="hero">
         <div className="container">
           <div className="hero-content">
@@ -147,7 +147,7 @@ function App() {
         </div>
       </header>
 
-      {/* 5. GRILLE DE PRODUITS */}
+      {/*GRILLE DE PRODUITS */}
       <main className="container section">
         <h2 className="section-title">Nos <span>Produits</span></h2>
         <div className="products-grid">
@@ -169,7 +169,7 @@ function App() {
         </div>
       </main>
 
-      {/* 6. FOOTER */}
+      {/*FOOTER */}
       <footer>
         <div className="container footer-bottom">
           <p>© 2026 STEELFIT — Tous droits réservés</p>
